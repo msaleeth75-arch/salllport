@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership | M.A. Saleeth Umar</title>
+  <link rel="icon" href="favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .leadership-section { padding-top: 150px; }
+    
+    .leadership-card {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .leadership-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 5px;
+      background: var(--gold-gradient);
+    }
+
+    .icon-wrapper {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 2rem;
+      background: rgba(212,175,55,0.1);
+      border: 2px solid var(--gold-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(212,175,55,0.3);
+    }
+
+    .icon-wrapper svg {
+      width: 50px;
+      height: 50px;
+      fill: var(--gold-primary);
+    }
+
+    .role-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+    }
+
+    .org-title {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+    }
+
+    .leadership-desc {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body class="page-transition">
+  
+  <div class="loader-wrapper"><div class="loader"></div></div>
+
+  <nav>
+    <a href="index.html" class="logo">Saleeth <span>Umar</span></a>
+    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="netmelt.html">Net Melt</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="leadership.html" class="active">Leadership</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="leadership-section">
+    <div class="container">
+      <h2 class="section-title reveal gold-text">Leadership & Vision</h2>
+      
+      <div class="leadership-card glass-panel reveal float-anim">
+        
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5L5 6.5l7-3.5 7 3.5-7 3.5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+
+        <h3 class="role-title">General Secretary</h3>
+        <h4 class="org-title">NSUI</h4>
+
+        <p class="leadership-desc">
+          As the General Secretary of NSUI, I am dedicated to representing student voices, driving progressive initiatives, and fostering a community of growth and empowerment. Leadership, to me, is about inspiring action, building consensus, and leading by example in both academic and social spheres.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 M.A. Saleeth Umar. Founder of Net Melt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

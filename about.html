@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | M.A. Saleeth Umar</title>
+  <link rel="icon" href="favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .about-section { padding-top: 150px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .about-text p { margin-bottom: 1.5rem; }
+    .about-text strong { color: var(--text-primary); }
+    
+    .skills-container {
+      margin-top: 3rem;
+    }
+    .skill-bar {
+      margin-bottom: 1.5rem;
+    }
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .skill-progress {
+      width: 100%;
+      height: 6px;
+      background: var(--glass-bg);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .skill-progress-fill {
+      height: 100%;
+      background: var(--gold-gradient);
+      border-radius: 3px;
+      transform: translateX(-100%);
+      transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active .skill-progress-fill {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="page-transition">
+  
+  <div class="loader-wrapper"><div class="loader"></div></div>
+
+  <nav>
+    <a href="index.html" class="logo">Saleeth <span>Umar</span></a>
+    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="netmelt.html">Net Melt</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title reveal gold-text">About Me</h2>
+      
+      <div class="about-grid">
+        <div class="about-content glass-panel reveal-left" style="padding: 3rem;">
+          <div class="about-text">
+            <p>I am <strong>M.A. Saleeth Umar</strong>, a passionate entrepreneur, web developer, and engineering student.</p>
+            <p>As the <strong>Founder of Net Melt</strong> and a proud member of the <strong>M.A. Family</strong>, I strive to build premium brands and innovative digital products that leave a meaningful impact.</p>
+            <p>Currently pursuing my Bachelor of Engineering at <strong>Yenepoya Institute of Technology</strong>, I balance my academic pursuits with my passion for technology, business development, and leadership.</p>
+            <p>My journey involves everything from crafting sleek web and app interfaces to scaling e-commerce brands like Net Melt Premium Dry Fruits Chocolate Brand. As the General Secretary of NSUI, I am also deeply committed to leadership and empowering others.</p>
+          </div>
+        </div>
+
+        <div class="skills-section reveal-right">
+          <h3 style="margin-bottom: 2rem; font-family: var(--font-heading);">Core Competencies</h3>
+          <div class="skills-container reveal">
+            <!-- Skills -->
+            <div class="skill-bar">
+              <div class="skill-info"><span>HTML & CSS</span><span>95%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>JavaScript</span><span>90%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>UI Design</span><span>85%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Business Development</span><span>95%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Marketing</span><span>88%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Leadership</span><span>98%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 98%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Brand Building</span><span>92%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Entrepreneurship</span><span>96%</span></div>
+              <div class="skill-progress"><div class="skill-progress-fill" style="width: 96%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 M.A. Saleeth Umar. Founder of Net Melt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
