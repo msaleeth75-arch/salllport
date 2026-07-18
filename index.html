@@ -25,10 +25,20 @@
     .hero-content { 
       z-index: 2; 
       display: flex; 
-      flex-direction: column; 
+      flex-direction: row; 
       align-items: center; 
-      gap: 25px; /* Equal spacing between elements */
-      margin-top: 40px; /* Moves the profile image down specifically */
+      justify-content: space-between;
+      gap: 50px; 
+      margin-top: 40px; 
+      width: 100%;
+      text-align: left;
+    }
+    .hero-text-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
     }
     .hero-profile-wrapper { opacity: 0; animation: profileZoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; perspective: 1000px; }
     
@@ -63,7 +73,7 @@
       height: 100%; 
       border-radius: 50%; 
       object-fit: cover; 
-      object-position: top center; /* Pins the top of the photo so the face drops down into the center */
+      object-position: center 20%; 
       /* Luxury Double Gold Border */
       box-shadow: 0 0 0 4px var(--bg-color), 
                   0 0 0 8px var(--gold-primary), 
@@ -81,6 +91,55 @@
     @keyframes profileZoomIn { 0% { transform: scale(0.6) translateY(50px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
     @keyframes floatRotate { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(4deg); } 100% { transform: translateY(0px) rotate(-4deg); } }
     @keyframes shadowBreathe { 0% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(0.8); opacity: 0.4; } 100% { transform: scale(1); opacity: 0.8; } }
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        min-height: 110vh;
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+        margin-top: 10px;
+      }
+      .hero-text-content {
+        align-items: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .profile-photo-container {
+        width: 75vw;
+        height: 75vw;
+        max-width: 250px;
+        max-height: 250px;
+      }
+      .profile-photo {
+        object-fit: cover; 
+        object-position: center 20%; 
+        box-shadow: 0 0 0 3px var(--bg-color), 
+                    0 0 0 6px var(--gold-primary), 
+                    0 0 30px 5px rgba(212, 175, 55, 0.4); 
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-roles span:first-child {
+        font-size: 1.1rem !important;
+      }
+      .hero-roles span:last-child {
+        font-size: 0.85rem !important;
+      }
+      .hero-tagline {
+        font-size: 0.95rem;
+        padding: 0 15px;
+      }
+      .profile-photo-container::after {
+        bottom: -20px;
+      }
+    }
   </style>
 </head>
 <body class="page-transition">
@@ -106,29 +165,31 @@
     <div class="container">
       <div class="hero-content reveal active">
         
+        <div class="hero-text-content">
+          <h1 class="hero-title shimmer-text">M.A. Saleeth Umar</h1>
+          
+          <div class="hero-roles">
+            <span style="color: var(--text-primary); font-weight: 500; font-size: 1.4rem;">Founder & CEO of Net Melt</span> <br>
+            <span style="font-size: 0.95rem; color: #777;">Engineering Student | Entrepreneur | Web Developer | App Developer | General Secretary, NSUI</span>
+          </div>
+          
+          <p class="hero-tagline">
+            Building premium brands, innovative digital products, and forging meaningful impact globally. Experience the intersection of luxury, technology, and leadership.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Download Resume</a>
+            <a href="projects.html" class="btn btn-secondary">View Projects</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+
         <div class="hero-profile-wrapper">
           <div class="profile-photo-container tilt-card">
             <div class="profile-ring"></div>
             <img src="assets/images/profile.jpg" alt="M.A. Saleeth Umar" class="profile-photo tilt-card-inner">
             <div class="profile-glass-overlay"></div>
           </div>
-        </div>
-        
-        <h1 class="hero-title shimmer-text">M.A. Saleeth Umar</h1>
-        
-        <div class="hero-roles">
-          <span style="color: var(--text-primary); font-weight: 500; font-size: 1.4rem;">Founder & CEO of Net Melt</span> <br>
-          <span style="font-size: 0.95rem; color: #777;">Engineering Student | Entrepreneur | Web Developer | App Developer | General Secretary, NSUI</span>
-        </div>
-        
-        <p class="hero-tagline">
-          Building premium brands, innovative digital products, and forging meaningful impact globally. Experience the intersection of luxury, technology, and leadership.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#" class="btn btn-primary">Download Resume</a>
-          <a href="projects.html" class="btn btn-secondary">View Projects</a>
-          <a href="contact.html" class="btn btn-secondary">Contact Me</a>
         </div>
         
       </div>
