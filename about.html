@@ -5,65 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | M.A. Saleeth Umar</title>
   <link rel="icon" href="favicon.ico">
-  
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-
   <style>
     .about-section { padding-top: 150px; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .about-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-    }
-    .about-text p { margin-bottom: 1.5rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+    .about-text { font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary); text-align: center; max-width: 900px; margin: 0 auto 3rem; }
     .about-text strong { color: var(--text-primary); }
-    
-    .skills-container {
-      margin-top: 3rem;
-    }
-    .skill-bar {
-      margin-bottom: 1.5rem;
-    }
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .skill-progress {
-      width: 100%;
-      height: 6px;
-      background: var(--glass-bg);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .skill-progress-fill {
-      height: 100%;
-      background: var(--gold-gradient);
-      border-radius: 3px;
-      transform: translateX(-100%);
-      transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.active .skill-progress-fill {
-      transform: translateX(0);
-    }
+    .timeline-intro { display: flex; flex-direction: column; gap: 2rem; border-left: 2px solid var(--gold-primary); padding-left: 2rem; margin: 3rem auto; max-width: 800px; }
+    .timeline-intro-item { position: relative; }
+    .timeline-intro-item::before { content: ''; position: absolute; left: -39px; top: 0; width: 20px; height: 20px; background: var(--bg-color); border: 4px solid var(--gold-primary); border-radius: 50%; }
+    .timeline-intro-item h4 { color: var(--gold-primary); font-size: 1.3rem; margin-bottom: 0.5rem; }
   </style>
 </head>
 <body class="page-transition">
   
   <div class="loader-wrapper"><div class="loader"></div></div>
-
   <nav>
     <a href="index.html" class="logo">Saleeth <span>Umar</span></a>
     <div class="menu-toggle"><span></span><span></span><span></span></div>
@@ -81,63 +40,139 @@
 
   <section class="about-section">
     <div class="container">
-      <h2 class="section-title reveal gold-text">About Me</h2>
+      <h2 class="section-title reveal gold-text">Executive Summary</h2>
       
       <div class="about-grid">
-        <div class="about-content glass-panel reveal-left" style="padding: 3rem;">
+        <div class="about-content glass-panel reveal-left" style="padding: 4rem;">
           <div class="about-text">
-            <p>I am <strong>M.A. Saleeth Umar</strong>, a passionate entrepreneur, web developer, and engineering student.</p>
-            <p>As the <strong>Founder of Net Melt</strong> and a proud member of the <strong>M.A. Family</strong>, I strive to build premium brands and innovative digital products that leave a meaningful impact.</p>
-            <p>Currently pursuing my Bachelor of Engineering at <strong>Yenepoya Institute of Technology</strong>, I balance my academic pursuits with my passion for technology, business development, and leadership.</p>
-            <p>My journey involves everything from crafting sleek web and app interfaces to scaling e-commerce brands like Net Melt Premium Dry Fruits Chocolate Brand. As the General Secretary of NSUI, I am also deeply committed to leadership and empowering others.</p>
+            <p>I am <strong>M.A. Saleeth Umar</strong>, the Founder & CEO of Net Melt, currently pursuing my Bachelor of Engineering at Yenepoya Institute of Technology.</p>
+            <p>As a driven Entrepreneur, Web Developer, App Developer, Technology Enthusiast, and the General Secretary of NSUI, my career is defined by building premium brands and leveraging technology to create real-world impact. I specialize in merging high-end aesthetics with powerful engineering.</p>
+          </div>
+
+          <div class="timeline-intro reveal">
+            <div class="timeline-intro-item">
+              <h4>Entrepreneurship & Business Development</h4>
+              <p>Scaling Net Melt into a luxury dry fruits and chocolate brand recognized for unparalleled quality and elegant packaging.</p>
+            </div>
+            <div class="timeline-intro-item">
+              <h4>Technology & Engineering</h4>
+              <p>Designing and developing cutting-edge web and mobile applications using modern tech stacks to drive business growth and user engagement.</p>
+            </div>
+            <div class="timeline-intro-item">
+              <h4>Leadership & Community</h4>
+              <p>Leading as General Secretary of NSUI, empowering students, and advocating for progressive educational policies.</p>
+            </div>
           </div>
         </div>
 
-        <div class="skills-section reveal-right">
-          <h3 style="margin-bottom: 2rem; font-family: var(--font-heading);">Core Competencies</h3>
-          <div class="skills-container reveal">
-            <!-- Skills -->
-            <div class="skill-bar">
-              <div class="skill-info"><span>HTML & CSS</span><span>95%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 95%;"></div></div>
+        <div class="achievements-section reveal" style="margin-top: 5rem;">
+          <h3 class="gold-text" style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">Career Highlights</h3>
+          <div class="achievements-grid">
+            <div class="achievement-card glass-panel tilt-card">
+              <div class="tilt-card-inner">
+                <div class="counter" data-target="15">0</div>
+                <div class="counter-label">Projects Completed</div>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>JavaScript</span><span>90%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 90%;"></div></div>
+            <div class="achievement-card glass-panel tilt-card">
+              <div class="tilt-card-inner">
+                <div class="counter" data-target="8">0</div>
+                <div class="counter-label">Websites & Apps</div>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>UI Design</span><span>85%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 85%;"></div></div>
+            <div class="achievement-card glass-panel tilt-card">
+              <div class="tilt-card-inner">
+                <div class="counter" data-target="3">0</div>
+                <div class="counter-label">Business Ventures</div>
+              </div>
             </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Business Development</span><span>95%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 95%;"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Marketing</span><span>88%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 88%;"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Leadership</span><span>98%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 98%;"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Brand Building</span><span>92%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-info"><span>Entrepreneurship</span><span>96%</span></div>
-              <div class="skill-progress"><div class="skill-progress-fill" style="width: 96%;"></div></div>
+            <div class="achievement-card glass-panel tilt-card">
+              <div class="tilt-card-inner">
+                <div class="counter" data-target="4">0</div>
+                <div class="counter-label">Years Leadership Exp.</div>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="skills-section reveal" style="margin-top: 5rem;">
+          <h3 class="gold-text" style="text-align: center; font-size: 2rem; margin-bottom: 3rem;">Core Competencies</h3>
+          
+          <div class="skills-grid">
+            <!-- Skill Items -->
+            <div>
+              <div class="skill-circle" data-percent="95">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">95%</div>
+              </div>
+              <div class="skill-name">HTML / CSS</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="90">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">90%</div>
+              </div>
+              <div class="skill-name">JavaScript</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="85">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">85%</div>
+              </div>
+              <div class="skill-name">React / Node.js</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="80">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">80%</div>
+              </div>
+              <div class="skill-name">Firebase / GitHub</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="92">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">92%</div>
+              </div>
+              <div class="skill-name">UI / UX Design</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="96">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">96%</div>
+              </div>
+              <div class="skill-name">Branding</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="94">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">94%</div>
+              </div>
+              <div class="skill-name">Marketing</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="98">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">98%</div>
+              </div>
+              <div class="skill-name">Business Dev</div>
+            </div>
+            <div>
+              <div class="skill-circle" data-percent="99">
+                <svg><circle cx="60" cy="60" r="54" class="bg"></circle><circle cx="60" cy="60" r="54" class="progress"></circle></svg>
+                <div class="skill-percentage">99%</div>
+              </div>
+              <div class="skill-name">Leadership</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 M.A. Saleeth Umar. Founder of Net Melt. All rights reserved.</p>
+      <p>&copy; 2026 M.A. Saleeth Umar. Founder & CEO of Net Melt. All rights reserved.</p>
     </div>
   </footer>
 

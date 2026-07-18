@@ -3,106 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Net Melt | Premium Dry Fruits Chocolate</title>
+  <title>Net Melt | Premium Dry Fruits & Chocolate</title>
   <link rel="icon" href="favicon.ico">
-  
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-
   <style>
-    .netmelt-hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: radial-gradient(circle at center, rgba(212,175,55,0.15) 0%, transparent 60%);
-    }
-    .netmelt-logo {
-      font-family: var(--font-heading);
-      font-size: 5rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 10px;
-    }
-    .product-showcase {
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      flex-wrap: wrap;
-      margin-top: 5rem;
-    }
-    .product-card {
-      width: 300px;
-      padding: 3rem 2rem;
-      text-align: center;
-      border: 1px solid var(--gold-primary);
-      box-shadow: 0 0 30px rgba(212,175,55,0.1);
-      transition: all 0.5s ease;
-      cursor: pointer;
-    }
-    .product-card:hover {
-      box-shadow: 0 0 50px rgba(212,175,55,0.4);
-      transform: translateY(-10px);
-    }
-    
-    /* 3D Rotating Box Placeholder using CSS */
-    .cube-container {
-      width: 150px;
-      height: 150px;
-      perspective: 1000px;
-      margin: 0 auto 2rem;
-    }
-    .cube {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      animation: rotateCube 10s infinite linear;
-    }
-    .cube-face {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      background: rgba(20, 20, 20, 0.9);
-      border: 2px solid var(--gold-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      color: var(--gold-primary);
-      font-size: 1.2rem;
-      box-shadow: inset 0 0 20px rgba(212,175,55,0.2);
-    }
-    .cube-face-front  { transform: rotateY(  0deg) translateZ(75px); }
-    .cube-face-right  { transform: rotateY( 90deg) translateZ(75px); }
-    .cube-face-back   { transform: rotateY(180deg) translateZ(75px); }
-    .cube-face-left   { transform: rotateY(-90deg) translateZ(75px); }
-    .cube-face-top    { transform: rotateX( 90deg) translateZ(75px); }
-    .cube-face-bottom { transform: rotateX(-90deg) translateZ(75px); }
-
-    @keyframes rotateCube {
-      0% { transform: rotateX(-20deg) rotateY(0deg); }
-      100% { transform: rotateX(-20deg) rotateY(360deg); }
-    }
-
-    .product-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-family: var(--font-heading);
-    }
-    .product-desc {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
+    .nm-hero { height: 70vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('assets/images/nm_cashew_lux.png') center/cover no-repeat; text-align: center; margin-top: 80px; border-bottom: 2px solid var(--gold-primary); }
+    .nm-products { padding: 100px 0; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+    .product-card { padding: 2rem; text-align: center; border-radius: 20px; transition: transform 0.5s; cursor: pointer; }
+    .product-card:hover { transform: translateY(-10px); }
+    .product-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid var(--gold-primary); }
+    .product-title { font-family: var(--font-heading); color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 10px; }
   </style>
 </head>
 <body class="page-transition">
   
   <div class="loader-wrapper"><div class="loader"></div></div>
-
   <nav>
     <a href="index.html" class="logo">Saleeth <span>Umar</span></a>
     <div class="menu-toggle"><span></span><span></span><span></span></div>
@@ -118,58 +37,52 @@
     </ul>
   </nav>
 
-  <section class="netmelt-hero">
+  <div class="nm-hero reveal">
     <div class="container">
-      <div class="reveal">
-        <h1 class="netmelt-logo shimmer-text">Net Melt</h1>
-        <p class="hero-tagline" style="font-size: 1.2rem;">Premium Dry Fruits Chocolate Brand</p>
-        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Experience the luxury of handcrafted chocolates infused with the finest dry fruits. A brand built on elegance, quality, and taste.</p>
-      </div>
+      <h1 class="hero-title gold-text" style="font-size: 4rem;">NET MELT</h1>
+      <p style="font-size: 1.2rem; color: #fff; letter-spacing: 3px; text-transform: uppercase;">The Pinnacle of Luxury Dry Fruits & Chocolates</p>
+    </div>
+  </div>
 
-      <div class="product-showcase">
-        <!-- Product 1 -->
-        <div class="product-card glass-panel reveal-left">
-          <div class="cube-container">
-            <div class="cube">
-              <div class="cube-face cube-face-front">Net Melt</div>
-              <div class="cube-face cube-face-back">Premium</div>
-              <div class="cube-face cube-face-right">Almond</div>
-              <div class="cube-face cube-face-left">Dark</div>
-              <div class="cube-face cube-face-top"></div>
-              <div class="cube-face cube-face-bottom"></div>
-            </div>
+  <section class="nm-products">
+    <div class="container">
+      <h2 class="section-title reveal gold-text">Premium Collections</h2>
+      
+      <div class="product-grid">
+        <div class="product-card glass-panel reveal-left tilt-card">
+          <div class="tilt-card-inner">
+            <img src="assets/images/nm_cashew_lux.png" class="product-img" alt="Luxury Chocolate Cashews">
+            <h3 class="product-title">Luxury Chocolate Cashews</h3>
+            <p style="color: var(--text-secondary);">Hand-picked giant cashews coated in rich Swiss dark chocolate.</p>
           </div>
-          <h3 class="product-title">Royal Almond Dark</h3>
-          <p class="product-desc">Rich 70% dark chocolate encasing roasted premium almonds.</p>
+        </div>
+        
+        <div class="product-card glass-panel reveal tilt-card">
+          <div class="tilt-card-inner">
+            <img src="assets/images/nm_box.png" class="product-img" alt="Premium Gift Box">
+            <h3 class="product-title">The Royal Box</h3>
+            <p style="color: var(--text-secondary);">An exquisite assortment of our finest creations in a luxury gold-embossed box.</p>
+          </div>
         </div>
 
-        <!-- Product 2 -->
-        <div class="product-card glass-panel reveal-right" style="transition-delay: 0.2s;">
-          <div class="cube-container">
-            <div class="cube">
-              <div class="cube-face cube-face-front" style="border-color: #e5e4e2; color: #e5e4e2;">Net Melt</div>
-              <div class="cube-face cube-face-back" style="border-color: #e5e4e2; color: #e5e4e2;">Premium</div>
-              <div class="cube-face cube-face-right" style="border-color: #e5e4e2; color: #e5e4e2;">Cashew</div>
-              <div class="cube-face cube-face-left" style="border-color: #e5e4e2; color: #e5e4e2;">White</div>
-              <div class="cube-face cube-face-top" style="border-color: #e5e4e2;"></div>
-              <div class="cube-face cube-face-bottom" style="border-color: #e5e4e2;"></div>
-            </div>
+        <div class="product-card glass-panel reveal-right tilt-card">
+          <div class="tilt-card-inner">
+            <img src="assets/images/nm_cashew_lux.png" class="product-img" alt="White Chocolate Cashews">
+            <h3 class="product-title">White Pearl Cashews</h3>
+            <p style="color: var(--text-secondary);">Premium roasted cashews enveloped in velvety white chocolate.</p>
           </div>
-          <h3 class="product-title" style="color: #e5e4e2;">Ivory Cashew Truffle</h3>
-          <p class="product-desc">Velvety white chocolate paired with golden roasted cashews.</p>
         </div>
       </div>
       
-      <div style="margin-top: 5rem;" class="reveal">
-        <a href="#" class="btn btn-primary glow-pulse">Shop Collection</a>
+      <div style="text-align: center; margin-top: 4rem;" class="reveal">
+        <a href="#" class="btn btn-primary">Visit Net Melt Official Store</a>
       </div>
-
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 M.A. Saleeth Umar. Founder of Net Melt. All rights reserved.</p>
+      <p>&copy; 2026 M.A. Saleeth Umar. Founder & CEO of Net Melt.</p>
     </div>
   </footer>
 

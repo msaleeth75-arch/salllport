@@ -3,22 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.A. Saleeth Umar | Founder of Net Melt</title>
-  <meta name="description" content="Portfolio of M.A. Saleeth Umar - Founder of Net Melt, Engineering Student, Entrepreneur, and Web Developer.">
+  <title>M.A. Saleeth Umar | Founder & CEO</title>
+  <meta name="description" content="Fortune 500-level Portfolio of M.A. Saleeth Umar - Founder of Net Melt.">
   <link rel="icon" href="favicon.ico">
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 
   <style>
-    /* Specific styles for index */
     .hero {
       height: 100vh;
       display: flex;
@@ -26,144 +20,78 @@
       justify-content: center;
       text-align: center;
       position: relative;
+      padding-top: 80px; /* Offset for the navbar to move everything naturally down */
+    }
+    .hero-content { 
+      z-index: 2; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 25px; /* Equal spacing between elements */
+      margin-top: 40px; /* Moves the profile image down specifically */
+    }
+    .hero-profile-wrapper { opacity: 0; animation: profileZoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; perspective: 1000px; }
+    
+    .profile-photo-container { 
+      width: 280px; 
+      height: 280px; 
+      border-radius: 50%; 
+      margin-bottom: 0; /* Let flex gap handle spacing */
+      position: relative; 
+      cursor: pointer; 
+      transform-style: preserve-3d; 
+      animation: floatRotate 8s ease-in-out infinite alternate; 
     }
     
-    .hero-content {
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .hero-profile-wrapper {
-      opacity: 0;
-      animation: profileZoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
-      perspective: 1000px;
-    }
-
-    .profile-photo-container {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      margin-bottom: 2rem;
-      position: relative;
-      cursor: pointer;
-      transform-style: preserve-3d;
-      animation: floatRotate 8s ease-in-out infinite alternate;
-    }
-
-    /* Realistic depth shadow beneath the profile */
-    .profile-photo-container::after {
-      content: '';
-      position: absolute;
-      bottom: -30px;
-      left: 10%;
-      width: 80%;
-      height: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      filter: blur(15px);
-      border-radius: 50%;
-      z-index: -1;
-      animation: shadowBreathe 8s ease-in-out infinite alternate;
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--gold-primary);
-      box-shadow: 0 0 50px rgba(212, 175, 55, 0.3), inset 0 0 20px rgba(0,0,0,0.5);
-      position: relative;
-      z-index: 2;
-      /* Cinematic lighting filter */
-      filter: contrast(1.1) brightness(1.05);
+    /* Realistic shadow beneath the profile */
+    .profile-photo-container::after { 
+      content: ''; 
+      position: absolute; 
+      bottom: -40px; 
+      left: 15%; 
+      width: 70%; 
+      height: 20px; 
+      background: rgba(0, 0, 0, 0.9); 
+      filter: blur(15px); 
+      border-radius: 50%; 
+      z-index: -1; 
+      animation: shadowBreathe 8s ease-in-out infinite alternate; 
     }
     
-    /* Glassmorphism reflection */
-    .profile-glass-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.02) 40%, transparent 100%);
-      z-index: 3;
-      pointer-events: none;
-      transform: translateZ(20px);
+    .profile-photo { 
+      width: 100%; 
+      height: 100%; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      object-position: top center; /* Pins the top of the photo so the face drops down into the center */
+      /* Luxury Double Gold Border */
+      box-shadow: 0 0 0 4px var(--bg-color), 
+                  0 0 0 8px var(--gold-primary), 
+                  0 0 50px 10px rgba(212, 175, 55, 0.4); 
+      position: relative; 
+      z-index: 2; 
     }
-    
-    .profile-ring {
-      position: absolute;
-      top: -15px; left: -15px; right: -15px; bottom: -15px;
-      border-radius: 50%;
-      border: 2px dashed rgba(212, 175, 55, 0.6);
-      animation: spin 20s linear infinite;
-      transform: translateZ(-10px);
-      z-index: 1;
-    }
+    .profile-glass-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 50%; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 30%); z-index: 3; pointer-events: none; transform: translateZ(10px); }
+    .profile-ring { position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; border-radius: 50%; border: 2px dashed rgba(212, 175, 55, 0.6); animation: spin 20s linear infinite; transform: translateZ(-10px); z-index: 1; }
+    .hero-title { font-family: var(--font-heading); font-size: 4.5rem; margin: 0; text-shadow: 0 10px 30px rgba(0,0,0,0.8); line-height: 1.1; }
+    .hero-roles { font-size: 1.2rem; color: var(--text-secondary); font-weight: 300; letter-spacing: 2px; margin: 15px 0; }
+    .hero-tagline { font-size: 1.1rem; max-width: 650px; margin: 0 auto 30px; line-height: 1.8; color: #d1d1d6; }
+    .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
 
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: 4rem;
-      margin: 0;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    }
-    
-    .hero-roles {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      font-weight: 300;
-      letter-spacing: 2px;
-      margin: 10px 0;
-    }
-
-    .hero-tagline {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      line-height: 1.8;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    @keyframes profileZoomIn {
-      0% { transform: scale(0.6) translateY(50px); opacity: 0; }
-      100% { transform: scale(1) translateY(0); opacity: 1; }
-    }
-
-    @keyframes floatRotate {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(4deg); }
-      100% { transform: translateY(0px) rotate(-4deg); }
-    }
-
-    @keyframes shadowBreathe {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(0.8); opacity: 0.4; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
+    @keyframes profileZoomIn { 0% { transform: scale(0.6) translateY(50px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+    @keyframes floatRotate { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(4deg); } 100% { transform: translateY(0px) rotate(-4deg); } }
+    @keyframes shadowBreathe { 0% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(0.8); opacity: 0.4; } 100% { transform: scale(1); opacity: 0.8; } }
   </style>
 </head>
 <body class="page-transition">
   
-  <!-- Loader -->
-  <div class="loader-wrapper">
-    <div class="loader"></div>
-  </div>
+  <div class="loader-wrapper"><div class="loader"></div></div>
 
-  <!-- Navigation -->
   <nav>
     <a href="index.html" class="logo">Saleeth <span>Umar</span></a>
-    <div class="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="menu-toggle"><span></span><span></span><span></span></div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="netmelt.html">Net Melt</a></li>
@@ -174,7 +102,6 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-content reveal active">
@@ -182,8 +109,7 @@
         <div class="hero-profile-wrapper">
           <div class="profile-photo-container tilt-card">
             <div class="profile-ring"></div>
-            <!-- User Profile Image Placeholder -->
-            <img src="assets/images/profile.jpg" alt="M.A. Saleeth Umar" class="profile-photo tilt-card-inner" onerror="this.src='https://via.placeholder.com/280/050505/d4af37?text=Upload+Photo'">
+            <img src="assets/images/profile.jpg" alt="M.A. Saleeth Umar" class="profile-photo tilt-card-inner">
             <div class="profile-glass-overlay"></div>
           </div>
         </div>
@@ -191,33 +117,30 @@
         <h1 class="hero-title shimmer-text">M.A. Saleeth Umar</h1>
         
         <div class="hero-roles">
-          Founder of Net Melt <br>
-          <span style="font-size: 0.9rem; color: #777;">Engineering Student | Entrepreneur | Web Developer | App Developer | General Secretary, NSUI</span>
+          <span style="color: var(--text-primary); font-weight: 500; font-size: 1.4rem;">Founder & CEO of Net Melt</span> <br>
+          <span style="font-size: 0.95rem; color: #777;">Engineering Student | Entrepreneur | Web Developer | App Developer | General Secretary, NSUI</span>
         </div>
         
         <p class="hero-tagline">
-          Building premium brands, innovative digital products, and meaningful impact.
+          Building premium brands, innovative digital products, and forging meaningful impact globally. Experience the intersection of luxury, technology, and leadership.
         </p>
 
         <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">View Projects</a>
-          <a href="netmelt.html" class="btn btn-secondary">Explore Net Melt</a>
+          <a href="#" class="btn btn-primary">Download Resume</a>
+          <a href="projects.html" class="btn btn-secondary">View Projects</a>
           <a href="contact.html" class="btn btn-secondary">Contact Me</a>
-          <a href="#" class="btn btn-secondary">Download Resume</a>
         </div>
         
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 M.A. Saleeth Umar. Founder of Net Melt. All rights reserved.</p>
+      <p>&copy; 2026 M.A. Saleeth Umar. Founder & CEO of Net Melt. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="assets/js/particles.js"></script>
   <script src="assets/js/animations.js"></script>
   <script src="assets/js/main.js"></script>
