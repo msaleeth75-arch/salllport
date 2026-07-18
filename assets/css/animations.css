@@ -1,0 +1,80 @@
+/* Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow Pulse Animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+}
+
+.glow-pulse {
+  animation: pulseGlow 4s infinite;
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Text Shimmer Effect for Gold Text */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #bf953f 50%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
