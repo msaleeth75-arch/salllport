@@ -25,6 +25,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
     }
     
     .hero-content {
@@ -35,13 +36,36 @@
       gap: 20px;
     }
 
+    .hero-profile-wrapper {
+      opacity: 0;
+      animation: profileZoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      perspective: 1000px;
+    }
+
     .profile-photo-container {
-      width: 250px;
-      height: 250px;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       position: relative;
       cursor: pointer;
+      transform-style: preserve-3d;
+      animation: floatRotate 8s ease-in-out infinite alternate;
+    }
+
+    /* Realistic depth shadow beneath the profile */
+    .profile-photo-container::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 10%;
+      width: 80%;
+      height: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      filter: blur(15px);
+      border-radius: 50%;
+      z-index: -1;
+      animation: shadowBreathe 8s ease-in-out infinite alternate;
     }
 
     .profile-photo {
@@ -49,23 +73,40 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(212, 175, 55, 0.5);
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+      border: 4px solid var(--gold-primary);
+      box-shadow: 0 0 50px rgba(212, 175, 55, 0.3), inset 0 0 20px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 2;
+      /* Cinematic lighting filter */
+      filter: contrast(1.1) brightness(1.05);
+    }
+    
+    /* Glassmorphism reflection */
+    .profile-glass-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.02) 40%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+      transform: translateZ(20px);
     }
     
     .profile-ring {
       position: absolute;
-      top: -10px; left: -10px; right: -10px; bottom: -10px;
+      top: -15px; left: -15px; right: -15px; bottom: -15px;
       border-radius: 50%;
-      border: 1px dashed var(--gold-primary);
-      animation: spin 15s linear infinite;
-      opacity: 0.5;
+      border: 2px dashed rgba(212, 175, 55, 0.6);
+      animation: spin 20s linear infinite;
+      transform: translateZ(-10px);
+      z-index: 1;
     }
 
     .hero-title {
       font-family: var(--font-heading);
       font-size: 4rem;
       margin: 0;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
     
     .hero-roles {
@@ -88,6 +129,23 @@
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
+    }
+
+    @keyframes profileZoomIn {
+      0% { transform: scale(0.6) translateY(50px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    @keyframes floatRotate {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(4deg); }
+      100% { transform: translateY(0px) rotate(-4deg); }
+    }
+
+    @keyframes shadowBreathe {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(0.8); opacity: 0.4; }
+      100% { transform: scale(1); opacity: 0.8; }
     }
   </style>
 </head>
@@ -121,10 +179,13 @@
     <div class="container">
       <div class="hero-content reveal active">
         
-        <div class="profile-photo-container tilt-card float-anim">
-          <div class="profile-ring"></div>
-          <!-- User Profile Image Placeholder -->
-          <img src="assets/images/profile.jpg" alt="M.A. Saleeth Umar" class="profile-photo tilt-card-inner" onerror="this.src='https://via.placeholder.com/250/050505/d4af37?text=MSU'">
+        <div class="hero-profile-wrapper">
+          <div class="profile-photo-container tilt-card">
+            <div class="profile-ring"></div>
+            <!-- User Profile Image Placeholder -->
+            <img src="assets/images/profile.jpg" alt="M.A. Saleeth Umar" class="profile-photo tilt-card-inner" onerror="this.src='https://via.placeholder.com/280/050505/d4af37?text=Upload+Photo'">
+            <div class="profile-glass-overlay"></div>
+          </div>
         </div>
         
         <h1 class="hero-title shimmer-text">M.A. Saleeth Umar</h1>
